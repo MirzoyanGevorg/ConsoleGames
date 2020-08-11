@@ -4,18 +4,23 @@
 #include <stdexcept>
 #include "deck.h"
 
-Deck::Deck() {
+Deck::Deck(const DeckSize& size) {
     auto suitStart{ static_cast<int>(Card::CardSuit::start) };
     auto suitEnd{ static_cast<int>(Card::CardSuit::end) };
     
     auto rankStartBig{ static_cast<int>(Card::CardRank::start_big) };
     auto rankStartSmall{ static_cast<int>(Card::CardRank::start_big) };
-    auto rankStartEnd{ static_cast<int>(Card::CardRank::start_big) };
+    auto rankEnd{ static_cast<int>(Card::CardRank::start_big) };
 
     for(int i{ suitStart }; i < suitEnd; ++i) {
         int start;
-        if(static_cast<bool>(DeckSize::small)) {
-            
+        if(size == DeckSize::big) {
+            start = rankStartBig;
+        } else if(size == DeckSize::small) {
+            start = rankStartSmall;
+        }
+        for(int j{start}; j < rankEnd; ++j) {
+            m_deck.push_back({static_cast<Card::CardRank>(j), static_cast<Card::CardSuit>(i)});
         }
     } 
 }

@@ -12,7 +12,7 @@ private:
     std::vector<Card> m_deck{};
 
 public:
-    Deck();
+    Deck(const DeckSize& size); 
     Card getCard();
     Card getRandomCard();
     void addCardToDeck(const Card& card);
