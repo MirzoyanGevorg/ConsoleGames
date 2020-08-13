@@ -5,7 +5,8 @@ include(CTest)
 enable_testing()
 
 
-add_executable(durak main.cpp card.cpp deck.cpp player.cpp game.cpp)
+add_executable(durak main.cpp card.cpp deck.cpp 
+                game.cpp humanPlayer.cpp smartAI.cpp stupidAI.cpp)
 set_property(TARGET durak PROPERTY CXX_STANDARD 20)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
