@@ -9,8 +9,9 @@ private:
     Card m_trump;
 
 public:
-    virtual std::vector<Card> getHend() const = 0;
-    virtual void takeCard(Deck& deck) = 0;  // ??
+    virtual std::vector<Card> getHand() const = 0;
     virtual Card* playCard() = 0;
-    virtual void printHand() = 0; // ??
+    virtual Card* getMinTrump() const = 0;
+    virtual void takeCard(const Card& card) = 0;  // ??
+    virtual void printHand() const= 0; // ??
 };
