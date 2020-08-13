@@ -37,7 +37,6 @@ private:
 public:
     Card();
     Card(CardRank rank, CardSuit suit);
-    CardRank getRank() const;
-    CardSuit getSuit() const;
     void print() const;
+    bool operator<(const Card& card) const;
 };

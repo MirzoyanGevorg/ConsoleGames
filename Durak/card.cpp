@@ -11,12 +11,12 @@ Card::Card(CardRank rank, CardSuit suit)
 
 }
 
-Card::CardRank Card::getRank() const {
-    return m_rank;
-}
-
-Card::CardSuit Card::getSuit() const {
-    return m_suit;
+bool Card::operator<(const Card& card) const {
+    if(static_cast<int>(m_suit) == static_cast<int>(card.m_suit)) {
+        return static_cast<int>(m_rank) < static_cast<int>(card.m_rank);
+    } else {
+        std::cout << "";
+    }
 }
 
 void Card::print() const {
